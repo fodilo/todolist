@@ -105,7 +105,7 @@
         v => !!v || 'Name is required',
       ],
       menu:false,
-      currentToDo:{
+      currentToDo:{"id":null,
         "title":null,
         "description":null,
         "date":null
@@ -117,6 +117,8 @@
     methods: {
       addToDo(){
         // add to do to the store
+        let i=this.$store.state.toDos.length
+        this.currentToDo.id=i;
             this.$store.dispatch('ADD_TODO',Object.assign({}, this.currentToDo))
 
       },

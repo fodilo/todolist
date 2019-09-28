@@ -34,6 +34,26 @@ export default new Vuex.Store({
       state.toDos = state.toDos.filter(element => {
         return element.id != param;
       });
+    },
+    //move a to do up (index-1)
+    moveUp(state, param) {
+      let index = state.toDos.findIndex(element => element.id == param);
+      if (index > 0) {
+        let first = Object.assign([], state.toDos[index]);
+        let second = Object.assign([], state.toDos[index - 1]);
+        state.toDos[index - 1] = first;
+        state.toDos[index] = second;
+      }
+    },
+    //move a to do up (index+1)
+    moveDown(state, param) {
+      let index = state.toDos.findIndex(element => element.id == param);
+      if (index < state.toDos.length - 1) {
+        let first = Object.assign([], state.toDos[index]);
+        let second = Object.assign([], state.toDos[index + 1]);
+        state.toDos[index + 1] = first;
+        state.toDos[index] = second;
+      }
     }
   },
   actions: {
@@ -51,6 +71,12 @@ export default new Vuex.Store({
     },
     REMOVE_TODO(context, todoId) {
       context.commit("removeToDo", todoId);
+    },
+    MOVE_UP(context, todoId) {
+      context.commit("moveUp", todoId);
+    },
+    MOVE_DOWN(context, todoId) {
+      context.commit("moveDown", todoId);
     }
   }
 });
