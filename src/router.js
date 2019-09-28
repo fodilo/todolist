@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+import Home from "./components/Home";
 import SignIn from "./components/SignIn";
 Vue.use(Router);
 
@@ -14,7 +14,7 @@ export default new Router({
       component: SignIn
     },
     {
-      path: "/",
+      path: "/home",
       name: "home",
       component: Home
     },

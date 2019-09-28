@@ -2,13 +2,7 @@
 
   <section class="src-components-sign-in">
     <v-container grid-list-md>
-      <v-row>
-
-      <v-col md="4"
-        offset-md="4" >
-       <span class="display-3">To DO APP</span> 
-        </v-col>
-        </v-row>
+     
 
       <v-row>
       <v-col md="4"
