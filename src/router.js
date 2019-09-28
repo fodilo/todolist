@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./components/Home";
+import ToDoAdd from "./components/ToDoAdd";
 import SignIn from "./components/SignIn";
 Vue.use(Router);
 
@@ -16,7 +16,7 @@ export default new Router({
     {
       path: "/home",
       name: "home",
-      component: Home
+      component: ToDoAdd
     },
     {
       path: "/about",
