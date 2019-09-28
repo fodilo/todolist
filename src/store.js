@@ -15,6 +15,10 @@ export default new Vuex.Store({
     login(state) {
       state.LoggedIn = true;
     },
+    // logout : mutate the state of loggedIn
+    logout(state) {
+      state.LoggedIn = false;
+    },
     // add to do item
     addToDo(state, param) {
       state.toDos.push(param);
@@ -36,7 +40,9 @@ export default new Vuex.Store({
     LOGIN(context) {
       context.commit("login");
     },
-
+    LOGOUT(context) {
+      context.commit("logout");
+    },
     ADD_TODO(context, todo) {
       context.commit("addToDo", todo);
     },
@@ -44,7 +50,7 @@ export default new Vuex.Store({
       context.commit("checkOffToDo", todoId);
     },
     REMOVE_TODO(context, todoId) {
-      context.commit("removeToDo");
+      context.commit("removeToDo", todoId);
     }
   }
 });
