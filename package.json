@@ -10,9 +10,11 @@
   "dependencies": {
     "@mdi/font": "^3.6.95",
     "core-js": "^2.6.5",
+    "material-design-icons-iconfont": "^5.0.1",
     "roboto-fontface": "*",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
+    "vuedraggable": "^2.23.1",
     "vuetify": "^2.0.0",
     "vuex": "^3.0.1"
   },

@@ -117,7 +117,7 @@
     methods: {
       addToDo(){
         // add to do to the store
-            this.$store.dispatch('ADD_TODO',this.currentToDo)
+            this.$store.dispatch('ADD_TODO',Object.assign({}, this.currentToDo))
 
       },
       showToDoDialog(){
