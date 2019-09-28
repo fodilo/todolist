@@ -4,7 +4,7 @@
     <v-container grid-list-md>
       <v-row>
 
-         <v-col md="4"
+      <v-col md="4"
         offset-md="4" >
        <span class="display-3">To DO APP</span> 
         </v-col>
@@ -28,7 +28,6 @@
         label="E-mail"
         required
       ></v-text-field>
-      <v-spacer></v-spacer>
       <v-btn
       class="mt-3"
         color="success"
@@ -36,6 +35,14 @@
       >
        Sign in
       </v-btn>
+      <v-btn
+      class="mt-3 ml-5"
+        color="success"
+        @click="logIn"
+      >
+       Sign in
+      </v-btn>
+
       </v-form>
 
         </v-card>
@@ -67,9 +74,20 @@
       }
     },
     methods: {
+      // sign method
       signIn(){
         if(this.validate()){
-          axios.post('/signout',{"email":email})
+          axios.post('/signup',{"email":email})
+          .then()
+          .catch(resp=>{
+
+          })
+        }
+      },
+      // login method
+      logIn(){
+        if(this.validate()){
+          axios.post('/login',{"email":email})
           .then()
           .catch(resp=>{
 
